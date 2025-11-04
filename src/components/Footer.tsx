@@ -1,11 +1,11 @@
+import logo from "@/assets/logo.svg";
+
 const Footer = () => {
   return (
     <footer className="py-12 border-t border-border">
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-          <div className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-            TechNova
-          </div>
+          <img src={logo} alt="Greenspoon" className="h-8" />
           
           <div className="flex gap-8 text-sm text-muted-foreground">
             <a href="#services" className="hover:text-primary transition-colors">Services</a>
@@ -14,7 +14,7 @@ const Footer = () => {
           </div>
           
           <div className="text-sm text-muted-foreground">
-            © 2024 TechNova. All rights reserved.
+            © 2024 Greenspoon. All rights reserved.
           </div>
         </div>
       </div>

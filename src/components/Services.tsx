@@ -1,5 +1,5 @@
 import { Card } from "@/components/ui/card";
-import { Bot, GraduationCap, Rocket, Zap } from "lucide-react";
+import { Bot, GraduationCap, Rocket, Shield, Zap } from "lucide-react";
 
 const Services = () => {
   const services = [
@@ -12,6 +12,11 @@ const Services = () => {
       icon: <Rocket className="w-12 h-12 text-primary" />,
       title: "Scale & Growth",
       description: "Our solutions are designed to scale with your business, ensuring seamless growth and reaching new markets effortlessly."
+    },
+    {
+      icon: <Shield className="w-12 h-12 text-primary" />,
+      title: "Cybersecurity",
+      description: "Protect your organization with comprehensive security solutions, risk assessments, and compliance strategies for the digital age."
     },
     {
       icon: <GraduationCap className="w-12 h-12 text-accent" />,

@@ -19,30 +19,20 @@ const Navigation = () => {
           
           <div className="hidden md:flex items-center gap-8">
             {isHomePage ? (
-              <>
-                <a href="#services" className="text-foreground/80 hover:text-primary transition-colors">
-                  Services
-                </a>
-                <a href="#about" className="text-foreground/80 hover:text-primary transition-colors">
-                  About
-                </a>
-                <a href="#contact" className="text-foreground/80 hover:text-primary transition-colors">
-                  Contact
-                </a>
-              </>
+              <a href="#services" className="text-foreground/80 hover:text-primary transition-colors">
+                Services
+              </a>
             ) : (
-              <>
-                <Link to="/#services" className="text-foreground/80 hover:text-primary transition-colors">
-                  Services
-                </Link>
-                <Link to="/#about" className="text-foreground/80 hover:text-primary transition-colors">
-                  About
-                </Link>
-                <Link to="/#contact" className="text-foreground/80 hover:text-primary transition-colors">
-                  Contact
-                </Link>
-              </>
+              <Link to="/#services" className="text-foreground/80 hover:text-primary transition-colors">
+                Services
+              </Link>
             )}
+            <Link to="/about" className="text-foreground/80 hover:text-primary transition-colors">
+              About
+            </Link>
+            <Link to="/contact" className="text-foreground/80 hover:text-primary transition-colors">
+              Contact
+            </Link>
             <Link to="/tech-training">
               <Button variant="default" size="sm">
                 Tech Training
@@ -61,30 +51,20 @@ const Navigation = () => {
         {isOpen && (
           <div className="md:hidden mt-4 pb-4 flex flex-col gap-4">
             {isHomePage ? (
-              <>
-                <a href="#services" className="text-foreground/80 hover:text-primary transition-colors">
-                  Services
-                </a>
-                <a href="#about" className="text-foreground/80 hover:text-primary transition-colors">
-                  About
-                </a>
-                <a href="#contact" className="text-foreground/80 hover:text-primary transition-colors">
-                  Contact
-                </a>
-              </>
+              <a href="#services" className="text-foreground/80 hover:text-primary transition-colors">
+                Services
+              </a>
             ) : (
-              <>
-                <Link to="/#services" className="text-foreground/80 hover:text-primary transition-colors">
-                  Services
-                </Link>
-                <Link to="/#about" className="text-foreground/80 hover:text-primary transition-colors">
-                  About
-                </Link>
-                <Link to="/#contact" className="text-foreground/80 hover:text-primary transition-colors">
-                  Contact
-                </Link>
-              </>
+              <Link to="/#services" className="text-foreground/80 hover:text-primary transition-colors">
+                Services
+              </Link>
             )}
+            <Link to="/about" className="text-foreground/80 hover:text-primary transition-colors">
+              About
+            </Link>
+            <Link to="/contact" className="text-foreground/80 hover:text-primary transition-colors">
+              Contact
+            </Link>
             <Link to="/tech-training">
               <Button variant="default" size="sm" className="w-full">
                 Tech Training

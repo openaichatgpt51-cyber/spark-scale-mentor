@@ -1,21 +1,93 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Sparkles, Play } from "lucide-react";
-import { motion } from "framer-motion";
+import { ArrowRight, Sparkles, Play, ChevronLeft, ChevronRight } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect, useCallback } from "react";
 import heroImage from "@/assets/hero-bg.jpg";
+import officeImage from "@/assets/office-workspace.jpg";
+import eventImage from "@/assets/tech-event.jpg";
+
+const slides = [
+  {
+    type: "video" as const,
+    background: heroImage,
+    badge: "AI-First Enterprise Solutions",
+    title: "Building the Future of",
+    highlight: "Enterprise Technology",
+    subtitle: "We help organizations scale with AI-powered enterprise applications and empower the next generation through cutting-edge tech training.",
+  },
+  {
+    type: "image" as const,
+    background: officeImage,
+    badge: "Our Workspace",
+    title: "Innovation Happens",
+    highlight: "Here Every Day",
+    subtitle: "Our modern office spaces are designed to foster creativity, collaboration, and breakthrough solutions for enterprise challenges.",
+  },
+  {
+    type: "image" as const,
+    background: eventImage,
+    badge: "Community Events",
+    title: "Leading the Tech",
+    highlight: "Community Forward",
+    subtitle: "We host and participate in industry events, sharing knowledge and building connections that drive innovation across sectors.",
+  },
+];
 
 const Hero = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+
+  const nextSlide = useCallback(() => {
+    setCurrentSlide((prev) => (prev + 1) % slides.length);
+  }, []);
+
+  const prevSlide = useCallback(() => {
+    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+  }, []);
+
+  useEffect(() => {
+    if (!isAutoPlaying) return;
+    const interval = setInterval(nextSlide, 6000);
+    return () => clearInterval(interval);
+  }, [isAutoPlaying, nextSlide]);
+
+  const slide = slides[currentSlide];
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Animated Background */}
-      <div 
-        className="absolute inset-0 z-0"
-        style={{
-          backgroundImage: `url(${heroImage})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-      />
-      <div className="absolute inset-0 bg-gradient-to-b from-background/95 via-background/90 to-background z-0" />
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={currentSlide}
+          initial={{ opacity: 0, scale: 1.1 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.8 }}
+          className="absolute inset-0 z-0"
+          style={{
+            backgroundImage: `url(${slide.background})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
+        />
+      </AnimatePresence>
+      
+      {/* Video-like animated overlay for first slide */}
+      {slide.type === "video" && (
+        <motion.div
+          animate={{ 
+            backgroundPosition: ['0% 0%', '100% 100%', '0% 0%'],
+          }}
+          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+          className="absolute inset-0 z-0 opacity-20"
+          style={{
+            backgroundImage: 'linear-gradient(45deg, hsl(var(--primary)/0.3) 25%, transparent 25%, transparent 75%, hsl(var(--primary)/0.3) 75%)',
+            backgroundSize: '60px 60px',
+          }}
+        />
+      )}
+      
+      <div className="absolute inset-0 bg-gradient-to-b from-background/95 via-background/85 to-background z-0" />
       
       {/* Animated Grid Pattern */}
       <div className="absolute inset-0 bg-grid opacity-30 z-0" />
@@ -41,36 +113,48 @@ const Hero = () => {
       <div className="container mx-auto px-6 py-32 relative z-10">
         <div className="max-w-5xl mx-auto text-center space-y-8">
           {/* Badge */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium shimmer"
-          >
-            <Sparkles size={16} className="animate-pulse" />
-            <span>AI-First Enterprise Solutions</span>
-          </motion.div>
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={`badge-${currentSlide}`}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.5 }}
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium shimmer"
+            >
+              <Sparkles size={16} className="animate-pulse" />
+              <span>{slide.badge}</span>
+            </motion.div>
+          </AnimatePresence>
           
           {/* Main Heading */}
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight tracking-tight"
-          >
-            Building the Future of
-            <span className="block mt-2 gradient-text"> Enterprise Technology</span>
-          </motion.h1>
+          <AnimatePresence mode="wait">
+            <motion.h1
+              key={`title-${currentSlide}`}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -30 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight tracking-tight"
+            >
+              {slide.title}
+              <span className="block mt-2 gradient-text">{slide.highlight}</span>
+            </motion.h1>
+          </AnimatePresence>
           
           {/* Subtitle */}
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed"
-          >
-            We help organizations scale with AI-powered enterprise applications and empower the next generation through cutting-edge tech training.
-          </motion.p>
+          <AnimatePresence mode="wait">
+            <motion.p
+              key={`subtitle-${currentSlide}`}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -30 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed"
+            >
+              {slide.subtitle}
+            </motion.p>
+          </AnimatePresence>
           
           {/* CTA Buttons */}
           <motion.div
@@ -89,12 +173,46 @@ const Hero = () => {
             </Button>
           </motion.div>
 
+          {/* Carousel Controls */}
+          <div className="flex items-center justify-center gap-4 pt-8">
+            <button
+              onClick={() => { prevSlide(); setIsAutoPlaying(false); }}
+              className="p-2 rounded-full bg-background/20 border border-border/30 hover:bg-primary/20 hover:border-primary/50 transition-all"
+              aria-label="Previous slide"
+            >
+              <ChevronLeft size={24} className="text-foreground" />
+            </button>
+            
+            <div className="flex gap-2">
+              {slides.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => { setCurrentSlide(index); setIsAutoPlaying(false); }}
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                    index === currentSlide 
+                      ? 'bg-primary w-8' 
+                      : 'bg-muted-foreground/30 hover:bg-muted-foreground/50'
+                  }`}
+                  aria-label={`Go to slide ${index + 1}`}
+                />
+              ))}
+            </div>
+            
+            <button
+              onClick={() => { nextSlide(); setIsAutoPlaying(false); }}
+              className="p-2 rounded-full bg-background/20 border border-border/30 hover:bg-primary/20 hover:border-primary/50 transition-all"
+              aria-label="Next slide"
+            >
+              <ChevronRight size={24} className="text-foreground" />
+            </button>
+          </div>
+
           {/* Trust Indicators */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="pt-12 flex flex-wrap justify-center items-center gap-8 text-muted-foreground"
+            className="pt-8 flex flex-wrap justify-center items-center gap-8 text-muted-foreground"
           >
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />

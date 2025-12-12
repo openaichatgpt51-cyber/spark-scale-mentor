@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { CheckCircle, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
+import teamImage from "@/assets/team-collaboration.jpg";
 
 const About = () => {
   const values = [
@@ -17,6 +18,37 @@ const About = () => {
       <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary/5 to-transparent" />
 
       <div className="container mx-auto px-6 relative z-10">
+        {/* Hero Image Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="mb-20 relative"
+        >
+          <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 via-accent/20 to-primary/20 rounded-3xl blur-3xl opacity-40" />
+          <div className="relative overflow-hidden rounded-3xl">
+            <img 
+              src={teamImage} 
+              alt="Our team collaborating in modern office" 
+              className="w-full h-[400px] object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
+            <div className="absolute bottom-8 left-8 right-8">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3 }}
+                className="glass-card p-6 rounded-2xl max-w-md"
+              >
+                <h3 className="text-2xl font-bold mb-2">Our Team</h3>
+                <p className="text-muted-foreground">A diverse group of innovators, engineers, and visionaries working together to shape the future of technology.</p>
+              </motion.div>
+            </div>
+          </div>
+        </motion.div>
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <motion.div
             initial={{ opacity: 0, x: -50 }}

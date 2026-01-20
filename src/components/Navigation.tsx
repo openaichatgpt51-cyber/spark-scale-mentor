@@ -1,13 +1,15 @@
 import { Button } from "@/components/ui/button";
-import { Menu } from "lucide-react";
+import { Menu, Settings } from "lucide-react";
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { useAuth } from "@/hooks/useAuth";
 import logo from "@/assets/logo.svg";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
   const isHomePage = location.pathname === "/";
+  const { user, isAdmin } = useAuth();
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border">
@@ -38,6 +40,17 @@ const Navigation = () => {
                 Tech Training
               </Button>
             </Link>
+            {isAdmin && (
+              <Link to="/admin" className="text-foreground/80 hover:text-primary transition-colors flex items-center gap-1">
+                <Settings size={16} />
+                Admin
+              </Link>
+            )}
+            {!user && (
+              <Link to="/auth" className="text-foreground/80 hover:text-primary transition-colors text-sm">
+                Login
+              </Link>
+            )}
           </div>
 
           <button 
@@ -70,6 +83,17 @@ const Navigation = () => {
                 Tech Training
               </Button>
             </Link>
+            {isAdmin && (
+              <Link to="/admin" className="text-foreground/80 hover:text-primary transition-colors flex items-center gap-1">
+                <Settings size={16} />
+                Admin
+              </Link>
+            )}
+            {!user && (
+              <Link to="/auth" className="text-foreground/80 hover:text-primary transition-colors">
+                Login
+              </Link>
+            )}
           </div>
         )}
       </div>

@@ -35,7 +35,7 @@ const Footer = () => {
               <img src={logo} alt="Greenspoon" className="h-8" />
             </Link>
             <p className="text-muted-foreground text-sm leading-relaxed">
-              Co-creating the next era of enterprise digital success through AI-powered solutions and visionary tech training.
+              AI-powered solutions and visionary tech training for enterprise digital success.
             </p>
             <div className="flex gap-4">
               {["X", "in", "gh"].map((platform) => (
@@ -111,7 +111,7 @@ const Footer = () => {
               <li>
                 <div className="flex items-start gap-3 text-sm text-muted-foreground">
                   <MapPin size={16} className="mt-0.5 shrink-0 text-primary/60" />
-                  Nairobi, Kenya
+                  294 Herbert Macaulay Way, Yaba
                 </div>
               </li>
             </ul>

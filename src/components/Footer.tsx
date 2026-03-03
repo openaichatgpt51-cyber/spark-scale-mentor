@@ -34,7 +34,7 @@ const Footer = () => {
             <h4 className="text-sm font-semibold uppercase tracking-wider text-foreground">
               Follow Us
             </h4>
-            <div className="flex gap-4">
+            <div className="flex flex-col gap-4">
               {["X", "in", "gh"].map((platform) => (
                 <a
                   key={platform}

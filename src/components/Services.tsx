@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
 import { Cloud, Brain, Shield, Zap, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import cloudImage from "@/assets/cloud-computing.jpg";
-import aiImage from "@/assets/ai-innovation.jpg";
-import securityImage from "@/assets/cybersecurity.jpg";
-import transformImage from "@/assets/digital-transformation.jpg";
+import cloudImage from "@/assets/cloud-computing.png";
+import aiImage from "@/assets/ai-innovation.png";
+import securityImage from "@/assets/cybersecurity.png";
+import transformImage from "@/assets/digital-transformation.png";
 
 const services = [
   {

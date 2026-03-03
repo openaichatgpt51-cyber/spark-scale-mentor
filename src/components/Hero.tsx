@@ -2,9 +2,9 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles, Play, ChevronLeft, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect, useCallback } from "react";
-import heroImage from "@/assets/hero-bg.jpg";
-import officeImage from "@/assets/office-workspace.jpg";
-import eventImage from "@/assets/tech-event.jpg";
+import heroImage from "@/assets/hero-bg.png";
+import officeImage from "@/assets/office-workspace.png";
+import eventImage from "@/assets/tech-event.png";
 
 const slides = [
   {

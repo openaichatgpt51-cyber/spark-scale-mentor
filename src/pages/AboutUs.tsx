@@ -1,5 +1,6 @@
 import Navigation from "@/components/Navigation";
 import About from "@/components/About";
+import GrowthChart from "@/components/GrowthChart";
 import Footer from "@/components/Footer";
 
 const AboutUs = () => {
@@ -8,6 +9,7 @@ const AboutUs = () => {
       <Navigation />
       <div className="pt-20">
         <About />
+        <GrowthChart />
       </div>
       <Footer />
     </div>

@@ -47,7 +47,7 @@ const Hero = () => {
 
   useEffect(() => {
     if (!isAutoPlaying) return;
-    const interval = setInterval(nextSlide, 6000);
+    const interval = setInterval(nextSlide, 10000);
     return () => clearInterval(interval);
   }, [isAutoPlaying, nextSlide]);
 
@@ -87,7 +87,7 @@ const Hero = () => {
         />
       )}
       
-      <div className="absolute inset-0 bg-gradient-to-b from-background/95 via-background/85 to-background z-0" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/50 to-background z-0" />
       
       {/* Animated Grid Pattern */}
       <div className="absolute inset-0 bg-grid opacity-30 z-0" />

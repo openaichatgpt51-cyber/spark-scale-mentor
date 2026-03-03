@@ -31,12 +31,9 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 py-16">
           {/* Brand Column */}
           <div className="lg:col-span-1 space-y-6">
-            <Link to="/">
-              <img src={logo} alt="Greenspoon" className="h-8" />
-            </Link>
-            <p className="text-muted-foreground text-sm leading-relaxed">
-              AI-powered solutions and visionary tech training for enterprise digital success.
-            </p>
+            <h4 className="text-sm font-semibold uppercase tracking-wider text-foreground">
+              Follow Us
+            </h4>
             <div className="flex gap-4">
               {["X", "in", "gh"].map((platform) => (
                 <a

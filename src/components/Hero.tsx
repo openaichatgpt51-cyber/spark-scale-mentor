@@ -10,26 +10,26 @@ const slides = [
   {
     type: "video" as const,
     background: heroImage,
-    badge: "AI at the Core, Excellence by Design",
-    title: "Co-Creating the Next Era of",
-    highlight: "Enterprise Digital Success",
-    subtitle: "Your vision, amplified by our intelligence. We deploy strategic AI platforms that drive scalable success and provide the visionary training that keeps your teams at the forefront.",
+    badge: "AI-First Enterprise Solutions",
+    title: "Engineering the Future of",
+    highlight: "Enterprise Technology",
+    subtitle: "We help organizations scale with AI-powered enterprise applications and empower the next generation through cutting-edge tech training.",
   },
   {
     type: "image" as const,
     background: officeImage,
-    badge: "The Heart of Our Culture",
-    title: "Step Inside Where",
-    highlight: "Ideas Take Flight",
-    subtitle: "This is where purpose meets precision. Our modern environment is crafted to connect diverse perspectives, empowering your teams to think differently, build together, and innovate without limits.",
+    badge: "Innovation Ecosystem",
+    title: "Where Visionary Ideas",
+    highlight: "Become Scalable Reality",
+    subtitle: "Our high-performance environments are engineered to foster creativity, collaboration, and breakthrough solutions for complex enterprise challenges.",
   },
   {
     type: "image" as const,
     background: eventImage,
-    badge: "Sharing Knowledge, Sparking Progress",
+    badge: "Global Tech Leadership",
     title: "Driving the Global",
-    highlight: "Innovation Dialogue",
-    subtitle: "Innovation thrives on conversation. We lead and participate in the tech community's most critical events, creating the sparks of knowledge and connection that illuminate the path forward for everyone.",
+    highlight: "Tech Dialogue Forward",
+    subtitle: "We convene industry leaders and innovators, sharing critical knowledge and building connections that catalyze progress across sectors.",
   },
 ];
 
@@ -94,18 +94,12 @@ const Hero = () => {
       
       {/* Floating Glow Effects */}
       <motion.div
-        animate={{ 
-          scale: [1, 1.2, 1],
-          opacity: [0.3, 0.5, 0.3]
-        }}
+        animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
         transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
         className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl z-0"
       />
       <motion.div
-        animate={{ 
-          scale: [1.2, 1, 1.2],
-          opacity: [0.2, 0.4, 0.2]
-        }}
+        animate={{ scale: [1.2, 1, 1.2], opacity: [0.2, 0.4, 0.2] }}
         transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
         className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-accent/20 rounded-full blur-3xl z-0"
       />
@@ -164,12 +158,12 @@ const Hero = () => {
             className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-6"
           >
             <Button size="lg" className="group text-lg px-8 py-6 glow-primary hover:scale-105 transition-all duration-300">
-              Start Your Journey
+              Get Started
               <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
             </Button>
             <Button size="lg" variant="outline" className="text-lg px-8 py-6 hover:bg-primary/10 hover:border-primary/50 transition-all duration-300">
               <Play className="mr-2" size={18} />
-              Watch Demo
+              Explore Solutions
             </Button>
           </motion.div>
 
@@ -216,7 +210,7 @@ const Hero = () => {
           >
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-              <span className="text-sm">Trusted by 50+ Enterprises</span>
+              <span className="text-sm">Trusted by 50+ Global Enterprises</span>
             </div>
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-accent animate-pulse" />

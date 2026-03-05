@@ -14,6 +14,7 @@ import partnershipImage from "@/assets/partnership.jpg";
 const contactSchema = z.object({
   name: z.string().trim().min(1, "Name is required").max(100, "Name must be less than 100 characters"),
   email: z.string().trim().email("Invalid email address").max(255, "Email must be less than 255 characters"),
+  organization: z.string().trim().max(100, "Organization must be less than 100 characters").optional(),
   message: z.string().trim().min(1, "Message is required").max(1000, "Message must be less than 1000 characters"),
 });
 
@@ -28,7 +29,7 @@ const Contact = () => {
   const onSubmit = (data: ContactFormData) => {
     console.log("Contact form:", data);
     toast({
-      title: "Message Sent!",
+      title: "Inquiry Sent!",
       description: "We'll get back to you as soon as possible.",
     });
     reset();
@@ -36,7 +37,6 @@ const Contact = () => {
 
   return (
     <section id="contact" className="py-24 relative overflow-hidden">
-      {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img 
           src={partnershipImage} 
@@ -55,11 +55,11 @@ const Contact = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Let's Build Something 
-            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent"> Amazing Together</span>
+            Let's Engineer Your Next
+            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent"> Success</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Ready to transform your business or start your tech journey? Get in touch with us today.
+            Ready to accelerate your digital transformation or empower your team? We are ready to listen.
           </p>
         </motion.div>
 
@@ -82,8 +82,8 @@ const Contact = () => {
                   <Mail className="text-primary" size={24} />
                 </div>
               </div>
-              <h3 className="font-semibold mb-2">Email Us</h3>
-              <p className="text-muted-foreground text-sm">hello@technova.com</p>
+              <h3 className="font-semibold mb-2">Strategic Partnerships</h3>
+              <p className="text-muted-foreground text-sm">hello@greenspoon.co.ke</p>
             </Card>
           </motion.div>
 
@@ -99,8 +99,8 @@ const Contact = () => {
                   <Phone className="text-accent" size={24} />
                 </div>
               </div>
-              <h3 className="font-semibold mb-2">Call Us</h3>
-              <p className="text-muted-foreground text-sm">+1 (555) 123-4567</p>
+              <h3 className="font-semibold mb-2">Enterprise Support</h3>
+              <p className="text-muted-foreground text-sm">+254 700 000 000</p>
             </Card>
           </motion.div>
 
@@ -116,8 +116,8 @@ const Contact = () => {
                   <MapPin className="text-primary" size={24} />
                 </div>
               </div>
-              <h3 className="font-semibold mb-2">Visit Us</h3>
-              <p className="text-muted-foreground text-sm">San Francisco, CA</p>
+              <h3 className="font-semibold mb-2">Global HQ</h3>
+              <p className="text-muted-foreground text-sm">Lagos, Nigeria</p>
             </Card>
           </motion.div>
         </motion.div>
@@ -129,7 +129,7 @@ const Contact = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           <Card className="max-w-2xl mx-auto p-8 bg-card/50 backdrop-blur border-border">
-          <h3 className="text-2xl font-bold mb-6 text-center">Send us a Message</h3>
+          <h3 className="text-2xl font-bold mb-6 text-center">Send Us a Project Inquiry</h3>
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
             <div>
               <Label htmlFor="contact-name">Name *</Label>
@@ -145,12 +145,12 @@ const Contact = () => {
             </div>
 
             <div>
-              <Label htmlFor="contact-email">Email *</Label>
+              <Label htmlFor="contact-email">Corporate Email *</Label>
               <Input
                 id="contact-email"
                 type="email"
                 {...register("email")}
-                placeholder="your@email.com"
+                placeholder="you@company.com"
                 className={errors.email ? "border-destructive" : ""}
               />
               {errors.email && (
@@ -159,11 +159,20 @@ const Contact = () => {
             </div>
 
             <div>
+              <Label htmlFor="contact-organization">Organization</Label>
+              <Input
+                id="contact-organization"
+                {...register("organization")}
+                placeholder="Your organization"
+              />
+            </div>
+
+            <div>
               <Label htmlFor="contact-message">Message *</Label>
               <Textarea
                 id="contact-message"
                 {...register("message")}
-                placeholder="Tell us how we can help..."
+                placeholder="Tell us about your project..."
                 className={errors.message ? "border-destructive" : ""}
               />
               {errors.message && (
@@ -172,7 +181,7 @@ const Contact = () => {
             </div>
 
             <Button type="submit" size="lg" className="w-full">
-              Send Message
+              Submit Inquiry
             </Button>
           </form>
           </Card>

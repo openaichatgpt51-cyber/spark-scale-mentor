@@ -17,7 +17,7 @@ const trainingSchema = z.object({
   name: z.string().trim().min(1, "Name is required").max(100, "Name must be less than 100 characters"),
   email: z.string().trim().email("Invalid email address").max(255, "Email must be less than 255 characters"),
   phone: z.string().trim().min(1, "Phone is required").max(20, "Phone must be less than 20 characters"),
-  company: z.string().trim().max(100, "Company name must be less than 100 characters").optional(),
+  organization: z.string().trim().max(100, "Organization must be less than 100 characters").optional(),
   interests: z.string().trim().min(1, "Please tell us about your training interests").max(500, "Message must be less than 500 characters"),
 });
 
@@ -32,16 +32,16 @@ const TechTraining = () => {
   const onSubmit = (data: TrainingFormData) => {
     console.log("Training sign-up:", data);
     toast({
-      title: "Registration Received!",
+      title: "Inquiry Received!",
       description: "We'll contact you soon to discuss your training needs.",
     });
     reset();
   };
 
   const programs = [
-    { icon: Code, title: "Web Development", description: "Learn modern frameworks, responsive design, and full-stack development from industry experts." },
-    { icon: Shield, title: "Cybersecurity", description: "Master security fundamentals, threat detection, and best practices to protect your organization." },
-    { icon: Cpu, title: "AI & Automation", description: "Understand AI tools, machine learning basics, and how to automate workflows for efficiency." }
+    { icon: Code, title: "Full-Stack Web Development", description: "Master modern frameworks, responsive architecture, and scalable application development with industry experts." },
+    { icon: Shield, title: "Enterprise Cybersecurity", description: "Acquire fundamentals in threat detection, risk mitigation, and compliance best practices to secure organizational assets." },
+    { icon: Cpu, title: "AI & Automation Engineering", description: "Develop proficiency in AI tools, ML deployment, and intelligent workflow automation for optimized efficiency." }
   ];
 
   return (
@@ -49,7 +49,6 @@ const TechTraining = () => {
       <Navigation />
       
       <section className="pt-32 pb-24 relative overflow-hidden">
-        {/* Hero Image Background */}
         <div className="absolute inset-0 z-0">
           <img 
             src={trainingImage} 
@@ -77,15 +76,14 @@ const TechTraining = () => {
               </motion.div>
             </div>
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              Tech Training
+              Corporate Tech Training
               <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent"> Programs</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Empower your team with cutting-edge technical skills. Our comprehensive training programs are designed to bridge the gap between traditional business practices and modern technology.
+              Empower your workforce with elite technical skills. Our comprehensive curricula bridge the gap between traditional business operations and modern technological capability.
             </p>
           </motion.div>
 
-          {/* Featured Image Section */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -130,14 +128,14 @@ const TechTraining = () => {
             transition={{ duration: 0.6, delay: 0.5 }}
           >
             <Card className="max-w-2xl mx-auto p-8 bg-card/50 backdrop-blur border-border">
-              <h2 className="text-3xl font-bold mb-6 text-center">Sign Up for Training</h2>
+              <h2 className="text-3xl font-bold mb-6 text-center">Inquire About Team Training</h2>
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
               <div>
                 <Label htmlFor="name">Full Name *</Label>
                 <Input
                   id="name"
                   {...register("name")}
-                  placeholder="John Doe"
+                  placeholder="Your full name"
                   className={errors.name ? "border-destructive" : ""}
                 />
                 {errors.name && (
@@ -146,12 +144,12 @@ const TechTraining = () => {
               </div>
 
               <div>
-                <Label htmlFor="email">Email *</Label>
+                <Label htmlFor="email">Corporate Email *</Label>
                 <Input
                   id="email"
                   type="email"
                   {...register("email")}
-                  placeholder="john@example.com"
+                  placeholder="you@company.com"
                   className={errors.email ? "border-destructive" : ""}
                 />
                 {errors.email && (
@@ -165,7 +163,7 @@ const TechTraining = () => {
                   id="phone"
                   type="tel"
                   {...register("phone")}
-                  placeholder="+1 (555) 123-4567"
+                  placeholder="+254 700 000 000"
                   className={errors.phone ? "border-destructive" : ""}
                 />
                 {errors.phone && (
@@ -174,20 +172,20 @@ const TechTraining = () => {
               </div>
 
               <div>
-                <Label htmlFor="company">Company (Optional)</Label>
+                <Label htmlFor="organization">Organization</Label>
                 <Input
-                  id="company"
-                  {...register("company")}
-                  placeholder="Your Company"
+                  id="organization"
+                  {...register("organization")}
+                  placeholder="Your organization"
                 />
               </div>
 
               <div>
-                <Label htmlFor="interests">Training Interests *</Label>
+                <Label htmlFor="interests">Primary Interests *</Label>
                 <Textarea
                   id="interests"
                   {...register("interests")}
-                  placeholder="Tell us which areas you're interested in and any specific needs..."
+                  placeholder="Tell us which programs you're interested in and any specific needs..."
                   className={errors.interests ? "border-destructive" : ""}
                 />
                 {errors.interests && (
@@ -196,7 +194,7 @@ const TechTraining = () => {
               </div>
 
               <Button type="submit" size="lg" className="w-full">
-                Submit Registration
+                Request Brochure
               </Button>
             </form>
             </Card>

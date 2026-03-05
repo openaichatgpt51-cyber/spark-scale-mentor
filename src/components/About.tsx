@@ -5,15 +5,14 @@ import teamImage from "@/assets/team-collaboration.jpg";
 
 const About = () => {
   const values = [
-    "AI-driven innovation at every step",
-    "Enterprise-grade scalability",
-    "Expert tech training programs",
-    "Proven track record of success"
+    "AI-Driven Innovation",
+    "Enterprise-Grade Scalability",
+    "Elite Tech Training",
+    "Proven Global Impact"
   ];
 
   return (
     <section id="about" className="py-32 relative overflow-hidden">
-      {/* Background Elements */}
       <div className="absolute inset-0 bg-grid opacity-20" />
       <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary/5 to-transparent" />
 
@@ -42,8 +41,8 @@ const About = () => {
                 transition={{ delay: 0.3 }}
                 className="glass-card p-6 rounded-2xl max-w-md"
               >
-                <h3 className="text-2xl font-bold mb-2">Our Team</h3>
-                <p className="text-muted-foreground">A diverse group of innovators, engineers, and visionaries working together to shape the future of technology.</p>
+                <h3 className="text-2xl font-bold mb-2">Our Mission</h3>
+                <p className="text-muted-foreground">A global team of innovators, engineers, and visionaries dedicated to building future-proof technology and cultivating the next generation of talent.</p>
               </motion.div>
             </div>
           </div>
@@ -58,16 +57,16 @@ const About = () => {
             className="space-y-8"
           >
             <span className="inline-block px-4 py-2 rounded-full bg-accent/10 border border-accent/20 text-accent text-sm font-medium">
-              About Us
+              Our Story
             </span>
             
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-              Transforming Ideas Into 
-              <span className="gradient-text"> Scalable Reality</span>
+              Engineering Tomorrow's Technology,
+              <span className="gradient-text"> Today</span>
             </h2>
             
             <p className="text-lg text-muted-foreground leading-relaxed">
-              We're a tech startup on a mission to revolutionize how enterprises leverage technology. Our AI-first approach ensures your organization stays ahead of the curve while we nurture the next generation of tech talent.
+              We are a dynamic tech partner on a dual mission: to revolutionize how enterprises leverage technology for scalable growth, and to nurture the world-class tech talent that will lead that innovation.
             </p>
             
             <div className="space-y-4">
@@ -89,7 +88,7 @@ const About = () => {
             </div>
             
             <Button size="lg" variant="outline" className="group mt-4 hover:bg-primary/10 hover:border-primary/50">
-              Learn More About Us
+              Meet the Leadership
               <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={18} />
             </Button>
           </motion.div>
@@ -101,17 +100,14 @@ const About = () => {
             transition={{ duration: 0.7 }}
             className="relative"
           >
-            {/* Glow Effect */}
             <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 via-accent/20 to-primary/20 rounded-3xl blur-3xl opacity-60" />
             
-            {/* Main Card */}
             <div className="relative glass-card rounded-3xl p-10 space-y-8">
-              {/* Stats Grid */}
               <div className="grid grid-cols-2 gap-6">
                 {[
-                  { value: "500+", label: "Projects Delivered", color: "primary" },
-                  { value: "1000+", label: "Students Trained", color: "accent" },
-                  { value: "98%", label: "Client Satisfaction", color: "primary" },
+                  { value: "500+", label: "Projects Scaled", color: "primary" },
+                  { value: "1000+", label: "Specialists Trained", color: "accent" },
+                  { value: "98%", label: "Client Retention", color: "primary" },
                   { value: "50+", label: "Enterprise Clients", color: "accent" }
                 ].map((stat, index) => (
                   <motion.div
@@ -130,7 +126,6 @@ const About = () => {
                 ))}
               </div>
 
-              {/* Decorative Element */}
               <div className="flex items-center gap-4 pt-4">
                 <div className="flex -space-x-3">
                   {[...Array(4)].map((_, i) => (

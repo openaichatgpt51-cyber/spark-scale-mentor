@@ -10,23 +10,23 @@ const services = [
   {
     icon: Cloud,
     title: "Cloud Solutions",
-    description: "Enterprise-grade cloud infrastructure with 99.99% uptime, auto-scaling, and seamless migration services.",
+    description: "Build, deploy, and scale on architecture optimized for 99.99% uptime, security, and seamless migration.",
     image: cloudImage,
-    stats: "40% cost reduction",
+    stats: "40% average cost reduction",
     color: "from-cyan-500 to-blue-600"
   },
   {
     icon: Brain,
     title: "AI & Machine Learning",
-    description: "Custom AI models, predictive analytics, and intelligent automation to transform your business operations.",
+    description: "Deploy custom models and predictive analytics that automate complex operations and unlock new value.",
     image: aiImage,
-    stats: "3x faster insights",
+    stats: "3x faster business insights",
     color: "from-purple-500 to-pink-600"
   },
   {
     icon: Shield,
     title: "Cybersecurity",
-    description: "End-to-end security solutions including threat detection, compliance, and zero-trust architecture.",
+    description: "Implement proactive, end-to-end security with robust threat detection and zero-trust architecture.",
     image: securityImage,
     stats: "99.9% threat prevention",
     color: "from-primary to-accent"
@@ -34,9 +34,9 @@ const services = [
   {
     icon: Zap,
     title: "Digital Transformation",
-    description: "Modernize legacy systems, streamline workflows, and accelerate your digital journey.",
+    description: "Modernize legacy systems and integrate intelligent workflows to outpace market changes.",
     image: transformImage,
-    stats: "60% efficiency boost",
+    stats: "60% operational efficiency boost",
     color: "from-orange-500 to-red-500"
   }
 ];
@@ -66,10 +66,7 @@ const cardVariants = {
 const Services = () => {
   return (
     <section id="services" className="py-32 relative overflow-hidden">
-      {/* Background Grid */}
       <div className="absolute inset-0 bg-grid opacity-30" />
-      
-      {/* Floating Glow Orbs */}
       <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl float" />
       <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent/10 rounded-full blur-3xl float" style={{ animationDelay: '3s' }} />
 
@@ -82,14 +79,14 @@ const Services = () => {
           className="text-center mb-20"
         >
           <span className="inline-block px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-6">
-            Our Expertise
+            End-to-End Expertise
           </span>
           <h2 className="text-4xl md:text-6xl font-bold mb-6">
-            Enterprise Solutions That
-            <span className="gradient-text"> Drive Results</span>
+            Enterprise Solutions Built for
+            <span className="gradient-text"> Scale</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            From cloud infrastructure to AI innovation, we deliver cutting-edge technology solutions that transform enterprises.
+            From resilient cloud infrastructure to pioneering AI innovation, we accelerate your digital transformation journey.
           </p>
         </motion.div>
 
@@ -106,7 +103,6 @@ const Services = () => {
               variants={cardVariants}
               className="group relative overflow-hidden rounded-3xl hover-lift"
             >
-              {/* Background Image */}
               <div className="absolute inset-0">
                 <img 
                   src={service.image} 
@@ -116,14 +112,11 @@ const Services = () => {
                 <div className="service-card-overlay" />
               </div>
 
-              {/* Content */}
               <div className="relative z-10 p-8 md:p-10 h-full min-h-[400px] flex flex-col justify-end">
-                {/* Icon */}
                 <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${service.color} p-4 mb-6 glow-subtle transition-all duration-300 group-hover:scale-110`}>
                   <service.icon className="w-full h-full text-foreground" />
                 </div>
 
-                {/* Stats Badge */}
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/20 border border-primary/30 text-primary text-sm font-medium mb-4 w-fit">
                   {service.stats}
                 </div>
@@ -141,7 +134,6 @@ const Services = () => {
                 </Button>
               </div>
 
-              {/* Hover Border Glow */}
               <div className="absolute inset-0 rounded-3xl border border-primary/0 group-hover:border-primary/30 transition-colors duration-500" />
             </motion.div>
           ))}

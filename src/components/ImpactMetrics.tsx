@@ -7,7 +7,7 @@ const metrics = [
     icon: TrendingUp,
     value: 500,
     suffix: "+",
-    label: "Projects Delivered",
+    label: "Projects Scaled",
     description: "Successful enterprise implementations",
     color: "primary"
   },
@@ -15,7 +15,7 @@ const metrics = [
     icon: Users,
     value: 1000,
     suffix: "+",
-    label: "Students Trained",
+    label: "Specialists Trained",
     description: "Tech professionals upskilled",
     color: "accent"
   },
@@ -31,13 +31,11 @@ const metrics = [
     icon: Award,
     value: 98,
     suffix: "%",
-    label: "Satisfaction Rate",
+    label: "Retention Rate",
     description: "Client success stories",
     color: "accent"
   }
 ];
-
-
 
 const CountUpNumber = ({ value, suffix }: { value: number; suffix: string }) => {
   const [count, setCount] = useState(0);
@@ -75,7 +73,6 @@ const CountUpNumber = ({ value, suffix }: { value: number; suffix: string }) => 
 const ImpactMetrics = () => {
   return (
     <section className="py-32 relative overflow-hidden">
-      {/* Animated Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-secondary/30 to-background" />
       <div className="absolute inset-0 bg-grid opacity-20" />
 
@@ -88,18 +85,17 @@ const ImpactMetrics = () => {
           className="text-center mb-16"
         >
           <span className="inline-block px-4 py-2 rounded-full bg-accent/10 border border-accent/20 text-accent text-sm font-medium mb-6">
-            Real Impact
+            Proven Performance
           </span>
           <h2 className="text-4xl md:text-6xl font-bold mb-6">
-            Driving Measurable
-            <span className="gradient-text"> Growth</span>
+            Delivering Measurable
+            <span className="gradient-text"> Growth and ROI</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Our track record speaks for itself — delivering consistent results for enterprises worldwide.
+            Our track record illustrates our commitment to excellence for clients worldwide.
           </p>
         </motion.div>
 
-        {/* Metrics Grid */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -127,7 +123,6 @@ const ImpactMetrics = () => {
             </motion.div>
           ))}
         </motion.div>
-
       </div>
     </section>
   );

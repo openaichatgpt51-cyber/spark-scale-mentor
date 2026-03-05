@@ -32,17 +32,17 @@ const GrowthChart = () => {
         >
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
             <div>
-              <h3 className="text-2xl font-bold mb-2">Annual Growth Trajectory</h3>
-              <p className="text-muted-foreground">Projects delivered and students trained this year</p>
+              <h3 className="text-2xl font-bold mb-2">Strategic Growth Trajectory</h3>
+              <p className="text-muted-foreground">Cumulative project delivery and talent development metrics</p>
             </div>
             <div className="flex gap-6 mt-4 md:mt-0">
               <div className="flex items-center gap-2">
                 <div className="w-3 h-3 rounded-full bg-primary" />
-                <span className="text-sm text-muted-foreground">Projects</span>
+                <span className="text-sm text-muted-foreground">Enterprise Projects</span>
               </div>
               <div className="flex items-center gap-2">
                 <div className="w-3 h-3 rounded-full bg-accent" />
-                <span className="text-sm text-muted-foreground">Students</span>
+                <span className="text-sm text-muted-foreground">Trained Specialists</span>
               </div>
             </div>
           </div>

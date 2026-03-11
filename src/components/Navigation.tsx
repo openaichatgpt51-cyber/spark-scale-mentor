@@ -16,7 +16,7 @@ const Navigation = () => {
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <Link to="/">
-            <img src={logo} alt="Greenatech" className="h-12 md:h-14 brightness-0 invert" />
+            <img src={logo} alt="Greenatech" className="h-12 md:h-14" />
           </Link>
           
           <div className="hidden md:flex items-center gap-8">

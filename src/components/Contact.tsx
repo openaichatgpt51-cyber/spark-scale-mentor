@@ -100,7 +100,7 @@ const Contact = () => {
                 </div>
               </div>
               <h3 className="font-semibold mb-2">Enterprise Support</h3>
-              <p className="text-muted-foreground text-sm">+254 700 000 000</p>
+              <p className="text-muted-foreground text-sm">+234 700 000 0000</p>
             </Card>
           </motion.div>
 

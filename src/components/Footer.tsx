@@ -158,7 +158,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-border/50 py-6 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-xs text-muted-foreground">
-            © {currentYear} Greenspoon. All rights reserved.
+            © {currentYear} Greenatech. All rights reserved.
           </p>
           <div className="flex gap-6">
             <a href="#" className="text-xs text-muted-foreground hover:text-primary transition-colors">

@@ -83,7 +83,7 @@ const Contact = () => {
                 </div>
               </div>
               <h3 className="font-semibold mb-2">Strategic Partnerships</h3>
-              <p className="text-muted-foreground text-sm">hello@greenatech.co.ke</p>
+              <p className="text-muted-foreground text-sm">hello@greenatechglobal.com</p>
             </Card>
           </motion.div>
 

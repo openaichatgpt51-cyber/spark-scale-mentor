@@ -44,11 +44,6 @@ const Navigation = () => {
                 Admin
               </Link>
             )}
-            {!user && (
-              <Link to="/auth" className="text-foreground/80 hover:text-primary transition-colors text-sm">
-                Login
-              </Link>
-            )}
           </div>
 
           <button 
@@ -83,11 +78,6 @@ const Navigation = () => {
               <Link to="/admin" className="text-foreground/80 hover:text-primary transition-colors flex items-center gap-1">
                 <Settings size={16} />
                 Admin
-              </Link>
-            )}
-            {!user && (
-              <Link to="/auth" className="text-foreground/80 hover:text-primary transition-colors">
-                Login
               </Link>
             )}
           </div>

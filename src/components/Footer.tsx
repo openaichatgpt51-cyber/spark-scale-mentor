@@ -134,9 +134,9 @@ const Footer = () => {
             </h4>
             <ul className="space-y-4">
               <li>
-                <a href="mailto:info@greenspoon.co.ke" className="flex items-start gap-3 text-sm text-muted-foreground hover:text-primary transition-colors group">
+                <a href="mailto:info@greenatech.co.ke" className="flex items-start gap-3 text-sm text-muted-foreground hover:text-primary transition-colors group">
                   <Mail size={16} className="mt-0.5 shrink-0 text-primary/60 group-hover:text-primary transition-colors" />
-                  info@greenspoon.co.ke
+                  info@greenatech.co.ke
                 </a>
               </li>
               <li>

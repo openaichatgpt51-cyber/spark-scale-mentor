@@ -163,7 +163,7 @@ const TechTraining = () => {
                   id="phone"
                   type="tel"
                   {...register("phone")}
-                  placeholder="+254 700 000 000"
+                  placeholder="+234 700 000 0000"
                   className={errors.phone ? "border-destructive" : ""}
                 />
                 {errors.phone && (

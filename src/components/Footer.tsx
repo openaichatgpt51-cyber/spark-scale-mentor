@@ -134,9 +134,9 @@ const Footer = () => {
             </h4>
             <ul className="space-y-4">
               <li>
-                <a href="mailto:info@greenspoon.co.ke" className="flex items-start gap-3 text-sm text-muted-foreground hover:text-primary transition-colors group">
+                <a href="mailto:info@greenatech.co.ke" className="flex items-start gap-3 text-sm text-muted-foreground hover:text-primary transition-colors group">
                   <Mail size={16} className="mt-0.5 shrink-0 text-primary/60 group-hover:text-primary transition-colors" />
-                  info@greenspoon.co.ke
+                  info@greenatech.co.ke
                 </a>
               </li>
               <li>
@@ -158,7 +158,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-border/50 py-6 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-xs text-muted-foreground">
-            © {currentYear} Greenspoon. All rights reserved.
+            © {currentYear} Greenatech. All rights reserved.
           </p>
           <div className="flex gap-6">
             <a href="#" className="text-xs text-muted-foreground hover:text-primary transition-colors">

@@ -134,21 +134,21 @@ const Footer = () => {
             </h4>
             <ul className="space-y-4">
               <li>
-                <a href="mailto:info@greenatech.co.ke" className="flex items-start gap-3 text-sm text-muted-foreground hover:text-primary transition-colors group">
+                <a href="mailto:info@greenatechglobal.com" className="flex items-start gap-3 text-sm text-muted-foreground hover:text-primary transition-colors group">
                   <Mail size={16} className="mt-0.5 shrink-0 text-primary/60 group-hover:text-primary transition-colors" />
-                  info@greenatech.co.ke
+                  info@greenatechglobal.com
                 </a>
               </li>
               <li>
-                <a href="tel:+254700000000" className="flex items-start gap-3 text-sm text-muted-foreground hover:text-primary transition-colors group">
+                <a href="tel:+2347000000000" className="flex items-start gap-3 text-sm text-muted-foreground hover:text-primary transition-colors group">
                   <Phone size={16} className="mt-0.5 shrink-0 text-primary/60 group-hover:text-primary transition-colors" />
-                  +254 700 000 000
+                  +234 700 000 0000
                 </a>
               </li>
               <li>
                 <div className="flex items-start gap-3 text-sm text-muted-foreground">
                   <MapPin size={16} className="mt-0.5 shrink-0 text-primary/60" />
-                  294 Herbert Macaulay Way, Yaba, Lagos
+                  294 Herbert Macaulay Way, Lagos
                 </div>
               </li>
             </ul>

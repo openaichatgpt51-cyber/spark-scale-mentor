@@ -80,11 +80,6 @@ const Navigation = () => {
                 Admin
               </Link>
             )}
-            {!user && (
-              <Link to="/auth" className="text-foreground/80 hover:text-primary transition-colors">
-                Login
-              </Link>
-            )}
           </div>
         )}
       </div>
